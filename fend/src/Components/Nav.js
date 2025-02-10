@@ -28,6 +28,9 @@ const Nav = () => {
         <div className='prolog'>
           <Link to='/profile'>Profile</Link>
           <div style={{ fontSize: '1.2em', cursor:'pointer'}} onClick={handleLogout}>Logout</div>
+          <div style={{ fontSize: '1.2em', cursor:'pointer'}}>Settings</div>
+          <div style={{ fontSize: '1.2em', cursor:'pointer'}}>Send feedback</div>
+          <div style={{ fontSize: '1.2em', cursor:'pointer'}}>Help</div>
         </div>
         </div>}
       {/* {info.isLogin && <Link to='/profile' className='profileIcon'>{info.name.charAt(0)}</Link>} */}

@@ -58,7 +58,7 @@ const handleSubmit=()=>{
         </label>
 
         <label htmlFor='gender'>Gender</label>
-        <select name='gender' onChange={handleInput}>
+        <select name='gender' id='gender' onChange={handleInput}>
           <option selected disabled>Select gender</option>
           <option value='male'>Male</option>
           <option value='female'>Female</option>

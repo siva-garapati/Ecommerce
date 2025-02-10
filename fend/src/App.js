@@ -9,10 +9,10 @@ import Cart from './Components/Cart'
 import Profile from './Components/Profile'
 import { useState } from 'react'
 import Context from './Components/Context'
+import Products from './Components/Products'
 
 const App = () => {
   let [info,setInfo]=useState({'token':'','isLogin':false,'name':'','role':''})
-  // let context=useContext(Context)
   return (
     <BrowserRouter>
       <Context.Provider value={{ setInfo, info }}>
@@ -25,6 +25,7 @@ const App = () => {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/profile' element={<Profile />} />
+            <Route path='/products' element={<Products/>}/>
           </Routes>
         </main>
     </Context.Provider>

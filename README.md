@@ -1,2 +1,0 @@
-# Ecommerce
-MERN Ecommerce application
