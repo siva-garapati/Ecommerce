@@ -10,6 +10,7 @@ import Profile from './Components/Profile'
 import { useState } from 'react'
 import Context from './Components/Context'
 import Products from './Components/Products'
+import AddProducts from './Components/AddProducts'
 
 const App = () => {
   let [info,setInfo]=useState({'token':'','isLogin':false,'name':'','role':''})
@@ -26,6 +27,7 @@ const App = () => {
             <Route path='/register' element={<Register />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='/products' element={<Products/>}/>
+            <Route path='/addproducts' element={<AddProducts/>}/>
           </Routes>
         </main>
     </Context.Provider>

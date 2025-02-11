@@ -20,7 +20,7 @@ const Login = () => {
         if(res.data.token!==undefined){
           setInfo({...info,...res.data,isLogin:true})
           setMsg('Login done')
-          navigate('/')
+          navigate('/products')
         }else{
           setMsg('Check Email or Password')
         }

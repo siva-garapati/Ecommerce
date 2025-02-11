@@ -24,6 +24,10 @@ const Nav = () => {
         <Link to="/register">Register</Link>
       </>}
 
+      {
+        info.isLogin && info.role === 'admin' && <Link to="/addproducts">Add Product</Link>
+      }
+
       {info.isLogin && <div className='profileIcon'>{info.name.charAt(0).toUpperCase()}
         <div className='prolog'>
           <Link to='/profile'>Profile</Link>
