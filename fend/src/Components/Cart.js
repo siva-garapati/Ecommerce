@@ -12,7 +12,7 @@ const Cart = () => {
         <h1>Please login to visit Cart</h1>
         <button className='regLog' onClick={()=>navigate('/login')}>Login</button>
       </div> : <div className='cart'>
-
+        Your Cart was Empty
       </div>
     }
     </div>
