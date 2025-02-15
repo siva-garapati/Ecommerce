@@ -18,9 +18,14 @@ const Login = () => {
     if(Object.values(logObj).every(value => value.trim() !== "")){
       axios.post("http://localhost:5000/login",logObj).then((res)=>{
         if(res.data.token!==undefined){
-          setInfo({...info,...res.data,isLogin:true})
+          setInfo({...info,...res.data,isLogin:true,cartCount:res.data.cartItems.length})
           setMsg('Login done')
-          navigate('/products')
+          console.log(res.data)
+          if(res.data.role==='admin'){
+            navigate('/admin')
+          }else{
+            navigate('/products')
+          }
         }else{
           setMsg('Check Email or Password')
         }
@@ -31,7 +36,7 @@ const Login = () => {
 
   return (
     <div className='login'>
-      <div className='loginImage'><img src='login.jpg' alt='' /></div>
+      {/* <div className='loginImage'><img src='login.jpg' alt='' /></div> */}
       <div className='loginForm'>
         <p>{msg}</p>
       
@@ -42,6 +47,7 @@ const Login = () => {
         <label htmlFor='password'>Password<br />
           <input type='password' name='password' id='password' value={logObj.password} onChange={handleInput} />
         </label>
+
         <button onClick={handleLogin} className='regLog'>login</button>
         
         <p style={{fontSize:'1.2rem'}}>Don't have an account? <Link to='/register'>Sign up</Link></p>

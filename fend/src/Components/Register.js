@@ -7,8 +7,6 @@ const Register = () => {
     "_id": "",
     "name": "",
     "phoneNumber": "",
-    "gender": "",
-    "place": "",
     "password": ""
 })
 let [msg,setMsg]=useState('')
@@ -38,7 +36,7 @@ const handleSubmit=()=>{
 
   return (
     <div className='register'>
-      <div className='registerImage'><img src='register.jpg' alt=''/></div>
+      {/* <div className='registerImage'><img src='register.jpg' alt=''/></div> */}
       <div className='registerForm'>
         <p>{msg}</p>
         <label htmlFor='name'>Name<br />
@@ -52,17 +50,6 @@ const handleSubmit=()=>{
         <label htmlFor='phoneNumber'>Phone Number<br />
           <input type='text' name='phoneNumber' id='phoneNumber' value={regObj.phoneNumber} onChange={handleInput} />
         </label>
-
-        <label htmlFor='place'>Place<br />
-          <input type='text' name='place' id='place' value={regObj.place} onChange={handleInput} />
-        </label>
-
-        <label htmlFor='gender'>Gender</label>
-        <select name='gender' id='gender' onChange={handleInput}>
-          <option selected disabled>Select gender</option>
-          <option value='male'>Male</option>
-          <option value='female'>Female</option>
-        </select>
 
         <label htmlFor='password'>Password<br />
           <input type='password' name='password' id='password' value={regObj.password} onChange={handleInput} />

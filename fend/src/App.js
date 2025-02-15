@@ -10,10 +10,11 @@ import Profile from './Components/Profile'
 import { useState } from 'react'
 import Context from './Components/Context'
 import Products from './Components/Products'
-import AddProducts from './Components/AddProducts'
+import Admin from './adminComps/Admin'
+import ProductPage from './Components/ProductPage'
 
 const App = () => {
-  let [info,setInfo]=useState({'token':'','isLogin':false,'name':'','role':''})
+  let [info,setInfo]=useState({'token':'','isLogin':true,'name':'R','role':'','cartItems':[],'_id':'ram.in'})
   return (
     <BrowserRouter>
       <Context.Provider value={{ setInfo, info }}>
@@ -27,7 +28,8 @@ const App = () => {
             <Route path='/register' element={<Register />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='/products' element={<Products/>}/>
-            <Route path='/addproducts' element={<AddProducts/>}/>
+            <Route path='/product/:id' element={<ProductPage/>}/>
+            <Route path='/admin' element={<Admin/>}/>
           </Routes>
         </main>
     </Context.Provider>

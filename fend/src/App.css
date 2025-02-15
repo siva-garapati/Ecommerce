@@ -1,289 +1,366 @@
 *{
     margin: 0;
     padding: 0;
-    outline: 0;
     box-sizing: border-box;
 }
 
 body{
-    background-color: rgb(240, 240, 240);
-}
-
-.main {
-    width: 100vw;
-    height: fit-content;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: rgb(244, 244, 244);
 }
 
 nav{
-    width: 100vw;
+    width: 100%;
     height: 10vh;
+    border-bottom: 1px solid rgb(100, 100, 100);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     background-color: white;
 }
 
-a{
-    width: 12%;
+nav a{
     text-decoration: none;
-    font-size: 1.3em;
-    /* border: 2px solid; */
-    text-align: center;
     color: black;
+    font-size: 1.2em;
+    padding-bottom: 2px;
 }
 
-nav img {
+nav a img {
+    width: 10rem;
     vertical-align: middle;
-    width: 80%;
-    /* border: 2px solid; */
+    padding: 0;
+}
+
+nav .active{
+    border-bottom: 2px solid;
 }
 
 nav .search{
-    width: 33%;
-    height: 60%;
-    /* border: 1px solid rgb(26, 26, 26); */
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    width: 35%;
+    height: 50%;
+    border: 1px solid;
     position: relative;
+    border-radius: 8px;
     overflow: hidden;
-    border-radius: 0.6rem;
 }
 
 nav .search input{
     width: 100%;
     height: 100%;
-    outline: 0;
-    border: 0;
-    padding: 1rem 1rem;
-    font-size: 1.2rem;
-    /* border-radius: 10px; */
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0.6em 0.6em;
     background-color: rgb(239, 243, 244);
 }
 
 nav .search button{
-    width: 10%;
+    width: 8%;
     height: 100%;
-    font-size: 1.5em;
     position: absolute;
-    right: 0px;
-    border: none;
-    cursor: pointer;
+    right: 0;
     background-color: transparent;
+    border: none;
+    font-size: 1.4em;
     color: rgb(90, 90, 90);
 }
 
-.profileIcon{
-    width: 2.5%;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    border: 2px solid;
-    align-content: center;
-    text-align: center;
+nav .cartIcon{
     position: relative;
+    padding: 0.2rem 0.5rem;
 }
 
-.prolog{
-    width: 10rem;
-    display: none;
+nav .cartIcon span{
     position: absolute;
-    top: 100%;
-    right: 10%;
-    transform: -50% -50%;
-    background-color: white;
-    box-shadow: 2px solid;
-    border-radius: 0.2rem;
-    padding: 1rem;
-    text-align: left;
-    z-index: 10;
+    top: -5px;
+    right: -10px;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.prolog div{
-    padding: 0.4rem 0;
-}
-
-.profileIcon:hover .prolog{
-    display: block;
+nav .profileIcon{
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    align-content: center;
+    border-radius: 50%;
+    font-size: 1.4em;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .home{
-    width: 100vw;
+    width: 100%;
     height: 90vh;
-    background-image: url('../public/home4.jpg');
-    background-size: cover;
     position: relative;
 }
 
-.home .info{
-    width: 42%;
-    height: 50%;
-    position: absolute;
-    top: 15%;
-    left: 5%;
+.home .welcome{
+    width: 45%;
+    height: 40%;
+    /* border: 2px solid; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    position: absolute;
+    left: 10%;
+    top: 20%;
 }
 
-.home .info h1{
-    font-size: 4rem;
-}
-
-.home .info button{
-    width: 35%;
+.welcome button{
+    width: 30%;
     padding: 0.6rem;
-    margin-top: 0.2rem;
     border-radius: 0.4rem;
     background-color: transparent;
-    color: white;
     font-size: 1.2rem;
     font-weight: 700;
     border: 2px solid rgb(97, 141, 172);
     color: rgb(32, 91, 133);
     cursor: pointer;
     outline: none;
+
 }
 
-.register, .login{
-    width: 50rem;
-    height: 30rem;
-    margin: 10vh auto;
-    /* border: 2px solid; */
-    background-color: white;
-    display: flex;
-    overflow: hidden;
-}
-
-.registerImage, .loginImage{
-    width: 45%;
-    height: 100%;
-}
-
-.registerImage img, .loginImage img{
+.productsCon, .productContainer{
     width: 100%;
-    height: 100%;
-}
-
-.register .registerForm, .login .loginForm{
-    width: 55%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.3rem;
-    padding: 3rem;
-    /* border: 2px solid;
-    border: 2px solid red; */
-}
-
-.login .loginForm{
-    gap: 1.6rem;
-}
-
-.registerForm label, .loginForm label{
-    width: 100%;
-    font-size: 1.2rem;
-    /* border: 2px solid; */
-}
-
-.registerForm label input, .registerForm select, .loginForm label input{
-    width: 100%;
-    padding: 0.5rem;
-    background-color: transparent;
-    outline: none;
-    border: 1px solid rgb(57, 57, 57);
-    border-radius: 0.3rem;
-}
-
-main input:focus, select:focus{
-    border-color: rgb(71, 161, 181);
-    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
-}
-
-.registerForm select option{
-    font-size: 0.8rem;
-}
-
-.regLog{
-    width: 45%;
-    padding: 0.6rem;
-    margin-top: 0.2rem;
-    border-radius: 0.4rem;
-    background-color: rgb(97, 141, 172);
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 500;
-    /* border: 2ps solid; */
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    outline: none;
-    border: none;
-}
-
-.cartComp{
-    width: 100%;
-    min-height: 90vh;
     height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow-x: hidden;
 }
 
-.cartComp .loginPlease{
-    height: 30rem;
-    /* border: 2px solid; */
-    align-content: center;
+.productsCon .products{
+    width: 90%;
+    height: fit-content;
+    margin: 5rem auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
+    row-gap: 5rem;
 }
 
-.cartComp .regLog{
-    width: 10rem;
-}
-
-.registerForm button:hover, .loginForm button:hover{
-    background-color: rgb(86, 126, 154);
-}
-
-.productsPage{
-    width: 100vw;
-    height: fit-content;
-    display: grid;
-    grid-template-rows: 50px 1fr;
-    grid-template-columns: 250px 1fr;
-    grid-template-areas:
-        "header header"
-        "sidebar main";
-    min-height: 100vh;
-}
-
-.productsPage .categories{
-    grid-area: header;
-    width: 100vw;
-    height: 5vh;
-    background-color: #9de6f5;
-    display: flex;
+.productsCon .products .card{
+    width: 22%;
+    height: 27rem;
     overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    padding: 0.2rem 0.6rem;
+    cursor: pointer;
+    background-color: white;
+}
+
+.productsCon .products .card .imgDiv{
+    width: 100%;
+    height: 65%;
+    overflow: hidden;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.products .card .imgDiv img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.products .card .contentDiv{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* border: 1px solid; */
+}
+
+.products .card .contentDiv h6{
     font-size: 1rem;
 }
 
-.productsPage .filters{
-    grid-area: sidebar;
-    /* width: 20%; */
-    height: 500px;
-    border: 2px solid;
+.products .card .contentDiv .price{
+    font-weight: bold;
+    font-size: 1.3rem;
 }
 
-.productsPage .products{
-    grid-area: main;
-    /* width: 80%; */
+.productsCon .products .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.productContainer .productCard{
+    width: 90%;
+    margin: 2rem auto;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    background-color: white;
+}
+
+.productContainer .productCard .left{
+    height: 70%;
+    width: 35%;
+    display:  flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.productContainer .productCard .left img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+.cartComp{
+    width: 100%;
+    overflow: hidden;
+}
+
+.cartComp .cartCon{
+    width: 92%;
+    margin: 3rem auto;
     height: fit-content;
-    min-height: 100vh;
-    border: 2px solid;
+    min-height: 60rem;
+    /* border: 2px solid; */
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+.cartComp .cartCon .cartItems{
+    width: 72%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    /* border: 2px solid; */
+    /* gap: 2rem; */
+    border-radius: 5px;
+}
+
+.cartComp .cartCon .carttotal{
+    width: 25%;
+    height: 20rem;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.cartComp .cartCon .cartItems .card{
+    width: 100%;
+    height: 14em;
+    display: flex;
+    /* border: 2px solid red; */
+    padding: 1.5rem 0.5rem;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(168, 168, 168);
+}
+
+.cartCon .cartItems .card .cardleft{
+    width: 20%;
+    /* border: 2px solid; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cartItems .card .cardleft .imgDiv {
+    /* border: 2px solid green; */
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.cartItems .card .cardleft .imgDiv img{
+    width: 80%;
+    /* object-fit: cover; */
+    /* object-position: center; */
+}
+
+.cartItems .card .cardleft .quantity{
+    display: flex;
+    width: 70%;
+    height: 20%;
+    /* border:  2px solid yellow; */
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cartItems .card .cardleft .quantity button{
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    outline: 0;
+    border: 1px solid rgb(150, 150, 150);
+}
+
+.cardleft .quantity button i{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cardleft .quantity p{
+    height: 1.8rem;
+    width: 3rem;
+    text-align: center;
+    align-content: center;
+    border-radius: 2px;
+    border: 1px solid rgb(150, 150, 150);
+}
+
+.cartItems .card .cardright{
+    width: 77%;
+    /* border: 2px solid; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.cartItems .card .cardright .title{
+    font-size: 1.2rem;
+    font-weight: 450;
+}
+
+.cartItems .card .cardright .price{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.cartItems .card .cardright button{
+    width: 0%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cartItems .card .cardright button:hover{
+    color: #007bff;
 }

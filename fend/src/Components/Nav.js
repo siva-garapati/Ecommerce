@@ -1,14 +1,16 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink} from 'react-router-dom'
 import Search from './Search'
 import Context from './Context'
 
 const Nav = () => {
-  let {info, setInfo}=useContext(Context)
+  let {info}=useContext(Context)
+  // let navigate=useNavigate()
 
-  const handleLogout=()=>{
-    setInfo({'token':'','isLogin':false,'name':'','role':''})
-  }
+  // const handleLogout=()=>{
+  //   setInfo({'token':'','isLogin':false,'name':'','role':''})
+  //   navigate('/home')
+  // }
   return (
     <nav>
         <Link to="/">
@@ -17,27 +19,21 @@ const Nav = () => {
 
         <Search/>
 
-        <Link to="/cart">Cart</Link>
+      <NavLink to="/cart" className="cartIcon">Cart
+        {info.cartCount>0 && <span>{info.cartCount}</span>}
+      </NavLink>
 
       {!info.isLogin && <>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
+        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/register">Register</NavLink>
       </>}
 
-      {
-        info.isLogin && info.role === 'admin' && <Link to="/addproducts">Add Product</Link>
-      }
-
       {info.isLogin && <div className='profileIcon'>{info.name.charAt(0).toUpperCase()}
-        <div className='prolog'>
+        {/* <div className='prolog'>
           <Link to='/profile'>Profile</Link>
           <div style={{ fontSize: '1.2em', cursor:'pointer'}} onClick={handleLogout}>Logout</div>
-          <div style={{ fontSize: '1.2em', cursor:'pointer'}}>Settings</div>
-          <div style={{ fontSize: '1.2em', cursor:'pointer'}}>Send feedback</div>
-          <div style={{ fontSize: '1.2em', cursor:'pointer'}}>Help</div>
-        </div>
+        </div> */}
         </div>}
-      {/* {info.isLogin && <Link to='/profile' className='profileIcon'>{info.name.charAt(0)}</Link>} */}
     </nav>
   )
 }
